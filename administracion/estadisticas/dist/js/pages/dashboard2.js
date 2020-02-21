@@ -110,7 +110,10 @@ $(function () {
       data: pieData,
       options: pieOptions      
     })
-
+    $('#calendar').datetimepicker({
+      format: 'L',
+      inline: true
+    })
   //-----------------
   //- END PIE CHART -
   //-----------------

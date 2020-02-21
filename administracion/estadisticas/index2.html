@@ -695,7 +695,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title">Monthly Recap Report</h5>
+                <h5 class="card-title">Reporte de ventas</h5>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -706,11 +706,11 @@
                       <i class="fas fa-wrench"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" role="menu">
-                      <a href="#" class="dropdown-item">Action</a>
-                      <a href="#" class="dropdown-item">Another action</a>
-                      <a href="#" class="dropdown-item">Something else here</a>
+                      <a href="#" class="dropdown-item">Dia</a>
+                      <a href="#" class="dropdown-item">Mes</a>
+                      <a href="#" class="dropdown-item">Semestre</a>
                       <a class="dropdown-divider"></a>
-                      <a href="#" class="dropdown-item">Separated link</a>
+                      <a href="#" class="dropdown-item">Año</a>
                     </div>
                   </div>
                   <button type="button" class="btn btn-tool" data-card-widget="remove">
@@ -723,7 +723,7 @@
                 <div class="row">
                   <div class="col-md-8">
                     <p class="text-center">
-                      <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                      <h5 class="description-header">Periodo: 1 Jan, 2014 - 30 Jul, 2014</h5>
                     </p>
 
                     <div class="chart">
@@ -735,12 +735,12 @@
                   <!-- /.col -->
                   <div class="col-md-4">
                     <p class="text-center">
-                      <strong>Goal Completion</strong>
+                      <h5 class="description-header">Comparación con el periodo anterior</h5>
                     </p>
 
                     <div class="progress-group">
-                      Add Products to Cart
-                      <span class="float-right"><b>160</b>/200</span>
+                      Ventas totales 
+                      <span class="float-right">160/200</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-primary" style="width: 80%"></div>
                       </div>
@@ -748,8 +748,8 @@
                     <!-- /.progress-group -->
 
                     <div class="progress-group">
-                      Complete Purchase
-                      <span class="float-right"><b>310</b>/400</span>
+                      Cotizaciones Pendientes
+                      <span class="float-right">310/400</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-danger" style="width: 75%"></div>
                       </div>
@@ -757,8 +757,8 @@
 
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Visit Premium Page</span>
-                      <span class="float-right"><b>480</b>/800</span>
+                      <span class="progress-text">Gastos corriente</span>
+                      <span class="float-right">480/800</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-success" style="width: 60%"></div>
                       </div>
@@ -766,8 +766,15 @@
 
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      Send Inquiries
-                      <span class="float-right"><b>250</b>/500</span>
+                      Inversión
+                      <span class="float-right">250/500</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-warning" style="width: 50%"></div>
+                      </div>
+                    </div>
+                    <div class="progress-group">
+                      Ganancia neta
+                      <span class="float-right">250/500</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-warning" style="width: 50%"></div>
                       </div>
@@ -826,7 +833,44 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <div>
+          <div class="row" style="margin-bottom:30px">
+            <div class="col-md-6">
+            Fecha inicio
+           <div class="row">
+             <div class="col-md-4"><select  name="" id="diaInicio">
 
+              <option value="">               Dia</option>
+             </select> </div>
+             <div class="col-md-4"><select  name="" id="mesInicio">
+
+            <option value="">              Mes</option>
+             </select></div>
+             <div class="col-md-4"><select  name="" id="anioInicio">
+
+            <option value="">              Año</option>
+             </select></div>
+           </div>
+            </div>
+            <div class="col-md-6">
+             
+              Fecha fin
+             <div class="row">
+              <div class="col-md-4"><select name="" id="diaFin">
+                <option value=""> 
+                  Dia</option>
+              </select></div>
+              <div class="col-md-4"><select name="" id="mesFin">
+                <option value="">Mes</option>
+              </select></div>
+              <div class="col-md-4"><select name="" id="anioFin">
+                <option value="">Año</option>
+              </select></div>
+            </div>
+           </div>
+           <button class="btn btn-success" style="margin:10px 10px 10px 10px"> Filtrar </button>
+          </div>
+       </div>   
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
@@ -851,24 +895,64 @@
                 <div class="d-md-flex">
                   <div class="p-1 flex-fill" style="overflow: hidden">
                     <!-- Map will be created here -->
+
                     <div id="world-map-markers" style="height: 325px; overflow: hidden">
-                      <div class="map"></div>
+                      <div class="map">
+                        
+                        <table class="table">
+                          <thead style="background-color:black">
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">Medida</th>
+                              <th scope="col">Existencia kg</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row" style="color:black">1</th>
+                              <td>Solera</td>
+                              <td>1 x 1/8</td>
+                              <td>80 kg</td>
+                            </tr>
+                            <tr>
+                              <th scope="row" style="color:black">2</th>
+                              <td>Angulo</td>
+                              <td>2 x 3/16</td>
+                              <td>120 kg</td>
+                            </tr>
+                            <tr>
+                              <th scope="row" style="color:black">3</th>
+                              <td>Viga ips</td>
+                              <td>5</td>
+                              <td>250 kg</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                                                                                                 <!-- aqui va lo faltante-->
+
+
+                      </div>
                     </div>
                   </div>
                   <div class="card-pane-right bg-success pt-2 pb-2 pl-4 pr-4">
+                    <P class="description-header"> DEUDORES </P>
                     <div class="description-block mb-4">
+                      <p>Folios</p>
                       <div class="sparkbar pad" data-color="#fff">90,70,90,70,75,80,70</div>
                       <h5 class="description-header">8390</h5>
                       <span class="description-text">CORCHOMEX</span>
                     </div>
                     <!-- /.description-block -->
                     <div class="description-block mb-4">
+                      <p>Folios</p>
                       <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
                       <h5 class="description-header">30%</h5>
                       <span class="description-text">FULANO</span>
                     </div>
                     <!-- /.description-block -->
                     <div class="description-block">
+                      <p>Folios</p>
                       <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
                       <h5 class="description-header">70%</h5>
                       <span class="description-text">SUTANO</span>
@@ -942,100 +1026,7 @@
             <!-- /.row -->
 
             <!-- TABLE: LATEST ORDERS -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Latest Orders</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
-                    <thead>
-                    <tr>
-                      <th>Order ID</th>
-                      <th>Item</th>
-                      <th>Status</th>
-                      <th>Popularity</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-warning">Pending</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>iPhone 6 Plus</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-info">Processing</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-warning">Pending</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>iPhone 6 Plus</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
+         
             <!-- /.card -->
           </div>
           <!-- /.col -->
@@ -1076,7 +1067,11 @@
               <span class="info-box-icon"><i class="far fa-comment"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">FACTURADO</span>
+                <span class="info-box-text">NO FACTURADO</span>
+                <span class="info-box-number">163,921</span>
+              </div>
+              <div class="info-box-content">
+                <span class="info-box-text">CON DESCUENTO</span>
                 <span class="info-box-number">163,921</span>
               </div>
               <!-- /.info-box-content -->

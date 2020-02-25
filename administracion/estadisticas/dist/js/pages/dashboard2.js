@@ -13,11 +13,13 @@ $(function () {
 
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $('#salesChart').get(0).getContext('2d')
-
+  var array2=[65000, 100000, 80000, 20000, 15000, 10000, 9000,6500, 10000, 8000, 20000, 15000, 10000, 90000,6005, 10000, 80000, 200000, 15000, 10000, 90000]
+ var array=[15000, 50000, 50000, 80000, 50000, 4000, 2000,6500, 10000, 8000, 20000, 150000, 10000, 9000,6500, 10000, 8000, 200000, 150000, 100000, 9000];
   var salesChartData = {
     labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
-      {
+      { 
+        //                   aqui va la venat total
         label               : 'Digital Goods',
         backgroundColor     : 'rgba(60,141,188,0.9)',
         borderColor         : 'rgba(60,141,188,0.8)',
@@ -26,9 +28,10 @@ $(function () {
         pointStrokeColor    : 'rgba(60,141,188,1)',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
-        data                : [28, 48, 40, 19, 86, 27, 90]
+        data                : array
       },
       {
+        //aqui va la inversion y gastos
         label               : 'Electronics',
         backgroundColor     : 'rgba(210, 214, 222, 1)',
         borderColor         : 'rgba(210, 214, 222, 1)',
@@ -37,8 +40,20 @@ $(function () {
         pointStrokeColor    : '#c1c7d1',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgba(220,220,220,1)',
-        data                : [65, 59, 80, 81, 56, 55, 40]
+        data                : array2
       },
+     /* { 
+                          aqui va la venat total
+        label               : 'Digital Goods',
+        backgroundColor     : 'rgba(0,255,0,0.6)',
+        borderColor         : 'rgba(0,255,0,0.6)',
+        pointRadius          : false,
+        pointColor          : '#3b8bba',
+        pointStrokeColor    : 'rgba(60,141,188,1)',
+        pointHighlightFill  : '#fff',
+        pointHighlightStroke: 'rgba(60,141,188,1)',
+        data                : array2
+      },*/
     ]
   }
 
@@ -110,10 +125,7 @@ $(function () {
       data: pieData,
       options: pieOptions      
     })
-    $('#calendar').datetimepicker({
-      format: 'L',
-      inline: true
-    })
+   
   //-----------------
   //- END PIE CHART -
   //-----------------

@@ -30,7 +30,7 @@ $queryUsuario=$dbConexion->query("select * from usuarios where usuario='$varsess
 if($nombre=='Nombre Cliente'){
   die('<h1>se necesita elegir un cliente para generar la cotización</h1>');
 }
-$sqlQuery="select * from  cotizaciontemporal where eliminado='no' and usuario='$varsession'";
+$sqlQuery="select * from  cotizaciontemporal where eliminado='no'  and usuario='$varsession'";
   $query = $dbConexion->query($sqlQuery);
   if($query->num_rows==0){
     die('<h1>no hay datos para generar cotización asegurese de generar la tabla de productos</h1>');
@@ -118,23 +118,14 @@ $plantilla='
           <td class="desc">'.$querys["descripcion"].'</td>
           <td class="unit">'.$querys["precio"].'</td>
           <td class="qty">'.$querys["cantidad"].'</td>
-          <td class="total">'.$querys["subtotal"].'</td>
+          <td class="total">'.$querys["total"].'</td>
           </tr>';
           $i++;
         }
     $plantilla.='
       </tbody>
       <tfoot>
-        <tr>
-          <td colspan="2"></td>
-          <td colspan="2">SUBTOTAL</td>
-          <td>'.number_format(floatval($subtotal), 2, '.', '').'</td>
-        </tr>
-        <tr>
-          <td colspan="2"></td>
-          <td colspan="2">IVA </td>
-          <td>'.number_format(floatval($iva), 2, '.', '').'</td>
-        </tr>'.$datoDes.'
+        '.$datoDes.'
         <tr>
           <td colspan="2"></td>
           <td colspan="2">TOTAL</td>

@@ -418,6 +418,7 @@ include 'conecta.php';
 										</div>
 										<br>
 								<label for="pulgadasMaterial"><input type="checkbox" id="pulgadasMaterial" value=".0254">Pulgadas</label>
+								<label for="opcionAimprimir"><input type="checkbox" id="opcionAimprimir" value="1"> S-I </label>
 										<br>
 										<div class="12u$">
 											<ul class="actions" style="text-align: center">

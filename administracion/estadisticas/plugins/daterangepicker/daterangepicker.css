@@ -1,9 +1,9 @@
-.daterangepicker {
+.daterpicker {
   position: absolute;
   color: inherit;
-  background-color: #fff;
+  background-color: rgb(228, 15, 15);
   border-radius: 4px;
-  border: 1px solid #ddd;
+  border: 1px solid rgb(97, 26, 26);
   width: 278px;
   max-width: none;
   padding: 0;
@@ -16,11 +16,60 @@
   font-size: 15px;
   line-height: 1em;
 }
+#ui-datepicker-div >a{
+  text-decoration: none;
+}
+#ui-datepicker-div{
 
+  position: absolute;
+  color: inherit;
+  background-color: rgb(190, 218, 197);
+  border-radius: 4px;
+  border: 1px solid rgb(97, 26, 26);
+  width: 300px;
+  max-width: none;
+  padding: 0;
+  margin-top: 7px;
+  top: 100px;
+  left: 20px;
+  z-index: 3001;
+  display: none;
+  font-family: arial;
+  font-size: 15px;
+  line-height: 1em;
+}
+.ui-datepicker-header{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.ui-datepicker-next{
+ 
+  float: right;
+  font-weight: bold;
+  font-size:15px;
+}
+.ui-datepicker-prev{
+ 
+ 
+  font-weight: bold;
+  font-size:15px;
+}
+.my-custom-scrollbar {
+  position: relative;
+  height: 200px;
+  overflow: auto;
+  }
+  .table-wrapper-scroll-y {
+  display: block;
+  }
+.ui-datepicker-title{
+   margin-top:15px;
+   margin-left:5px;
+}
 .daterangepicker:before, .daterangepicker:after {
   position: absolute;
   display: inline-block;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(241, 19, 19, 0.2);
   content: '';
 }
 

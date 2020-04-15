@@ -4,7 +4,7 @@ include 'conecta.php';
 session_start();
 $varsession=$_SESSION['usuario'];
 $time = time();
-
+$porcentajeDescuento=$_GET['porcentajeDescuento'];
 $fecha= date("y-m-d", $time);
 $serie=trim($_GET['serie']);
 $nombre=$_GET['nombreCliente'];
@@ -172,7 +172,7 @@ $mpdf->Output($cadena.$nombreArchivo,'F');
 $pst=$dbConexion->prepare("insert into historialventas values(null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 foreach($query as $que){
 $pst->bind_param('siissisddsissssi',$fecha,$idCliente,$que['id'],$folio,$pendiente,$numero,$eliminado,$que['cantidadDescontar'],floatval($total-$descuento),
-$facturado,$idUser,$pago,$hora,$credito,$serie,$que['id_cotizacion']);
+$facturado,$idUser,$pago,$porcentajeDescuento,$credito,$serie,$que['id_cotizacion']);
 $query= $pst->execute();
   
 }
